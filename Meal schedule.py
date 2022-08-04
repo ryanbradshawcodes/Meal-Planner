@@ -84,7 +84,7 @@ def print_meal_plan():
         else:
             print(relevant_days[i] + ": " + meal_plan[i])
 
-# ---------------------
+# --- Run the program ---
 generate_meal_plan()
 print_meal_plan()
 
