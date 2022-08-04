@@ -2,6 +2,7 @@
 
 # ! Entering too few meals (planner_length) will result in an error
 # TODO Allow the user to select days when they know they can't make a new meal
+# TODO Write the meal plan to a file (or maybe a spreadsheet) so it can be presented better and stored for future use
 
 import random
 
