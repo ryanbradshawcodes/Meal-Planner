@@ -4,6 +4,7 @@
 # TODO Allow the user to select days when they know they can't make a new meal
 # TODO Write the meal plan to a file (or maybe a spreadsheet) so it can be presented better and stored for future use
 # TODO Allow user to remake the meal plan if they want to at the end of the program
+# TODO Move the dinner_list to a separate file
 
 import random
 
