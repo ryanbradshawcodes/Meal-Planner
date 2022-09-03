@@ -80,12 +80,16 @@ def generate_meal_plan():
         
 # Function that prints the days and meals in the meal plan
 def print_meal_plan():
+    print("------------------------------------")
+    
     for i in range(planner_length):
         # If the meal has appeared before, append leftover to print string
         if meal_plan[i] in meal_plan[:i]:
             print(relevant_days[i] + ": " + meal_plan[i] + " (leftover)")
         else:
             print(relevant_days[i] + ": " + meal_plan[i])
+
+    print("------------------------------------")
 
 # --- Run the program ---
 generate_meal_plan()
