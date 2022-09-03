@@ -16,8 +16,9 @@ dinner_list = {
     "Cottage pie": 2,
 }
 
-#https://www.bbcgoodfood.com/recipes/cottage-pie
+# https://www.bbcgoodfood.com/recipes/cottage-pie
 
+DAYS_OF_THE_WEEK = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 meal_plan = []
 
 print("----------------------------")
@@ -32,28 +33,30 @@ print("\t 7. Sunday\n")
 
 starting_day = int(input("Enter the starting day: "))
 planner_length = int(input("Enter how many days you want to plan for: "))
-
-DAYS_OF_THE_WEEK = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 relevant_days = [None] * planner_length
 
+# If the planner_length is > the sum of leftover meals + the number of meals in the dinner_list, exit the program
+if planner_length > sum(dinner_list.values()) + len(dinner_list):
+    print("---------------------------------------------")
+    print("Error: Not enough meals to fill the meal plan")
+    print("---------------------------------------------")
+    exit()
+    
 # Fill meal_days with the days of the week starting from the starting day
 for i in range(planner_length):
     relevant_days[i] = DAYS_OF_THE_WEEK[(starting_day - 1 + i) % 7]
 
 # Function to choose a random meal from the dinner_list and add it to the meal_plan
 def add_meal():
-    try:
-        meal_choice = random.choice(list(dinner_list.keys()))
-        meal_plan.append(meal_choice)
-    except:
-        meal_plan.append("No meal")
-        return
+    meal_choice = random.choice(list(dinner_list.keys()))
+    meal_plan.append(meal_choice)
 
 # Function that handles leftover meals
 def handle_leftovers():
     try:
         leftover_meals = dinner_list[meal_plan[-1]] 
     except:
+        print("an error occurred")
         return
     
     for i in range(leftover_meals):
@@ -64,7 +67,7 @@ def handle_leftovers():
 
 # Function that determines if the meal plan is full
 def is_full():
-    if len(meal_plan) == planner_length:
+    if len(meal_plan) >= planner_length:
         return True
     else:
         return False
@@ -72,11 +75,8 @@ def is_full():
 # Driver function
 def generate_meal_plan():
     while (not is_full()):
-        try:
-            add_meal()
-            handle_leftovers()
-        except:
-            return
+        add_meal()
+        handle_leftovers()
         
 # Function that prints the days and meals in the meal plan
 def print_meal_plan():
