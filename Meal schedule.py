@@ -66,10 +66,7 @@ def handle_leftovers():
 
 # Function that determines if the meal plan is full
 def is_full():
-    if len(meal_plan) >= planner_length:
-        return True
-    else:
-        return False
+    return len(meal_plan) >= planner_length
 
 # Driver function
 def generate_meal_plan():
