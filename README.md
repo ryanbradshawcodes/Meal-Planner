@@ -23,10 +23,4 @@ The meals alongside the number of leftovers they can provide is inputted into th
 
 ## Future work
 
-The issues and future improvements are listed at the top of the Python file. I will outline them here too:
-
-* ! Entering too few meals (planner_length) will result in an error
-* TODO Allow the user to select days when they know they can't make a new meal
-* TODO Write the meal plan to a file (or maybe a spreadsheet) so it can be presented better and stored for future use
-* TODO Allow user to remake the meal plan if they want to at the end of the program
-* TODO Move the dinner_list to a separate file
+The issues and future improvements are listed at the top of the Python file.
